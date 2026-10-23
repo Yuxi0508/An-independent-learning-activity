@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DOM and Events Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>My Homework</h1>
+  <label for="homework">Assignment name:</label>
+  <input id="homework" type="text">
+  <button id="show-button" type="button">Show assignment</button>
+  <p id="result" role="status">No assignment entered yet.</p>
+
+  <script>
+    // DOM: find the elements on the page.
+    const input = document.querySelector('#homework');
+    const button = document.querySelector('#show-button');
+    const result = document.querySelector('#result');
+
+    // Event handling: run this function when the button is clicked.
+    button.addEventListener('click', () => {
+      const name = input.value.trim();
+
+      // DOM: update the paragraph's text.
+      if (name === '') {
+        result.textContent = 'Please enter an assignment name.';
+      } else {
+        result.textContent = 'My assignment: ' + name;
+      }
+    });
+  </script>
+</body>
+</html>
