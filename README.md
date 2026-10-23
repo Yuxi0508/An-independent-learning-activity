@@ -1,1 +1,0 @@
-# An-independent-learning-activity
